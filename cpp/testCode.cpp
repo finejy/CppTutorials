@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
-	cout << "Hello World!" << endl;
+int main(){
+	cout << "This (\") is a quote, and this (\\) is a backslash." << ends;
 	return 0;
 }
