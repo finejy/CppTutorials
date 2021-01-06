@@ -1,3 +1,3 @@
 ## README
 
-start github cnommit
+start github commit
