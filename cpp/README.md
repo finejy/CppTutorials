@@ -6,6 +6,7 @@ while 문과 연산자 cin으로 임의의 양만큼 입력을 받을 때, enter
 -------------------------------------------------------------------------------------------
 
 New grammar
+#1
 조건문 간결하게 쓰는 방식
 (변수) = (조건) ? (결과1) : (결과2);
 
@@ -13,7 +14,12 @@ New grammar
 if(조건) (변수) = (결과1);
 else (변수) = (결과2);
 	
+#2
+#include <algorithm>
+#include <functional>
 
+vector<type> x;
+sort(x.begin(), x.end(), greater<type>()); -> 내림 차순 정렬
 
 
 
@@ -25,6 +31,7 @@ simple tips
 #1
 string과 vector 라이브러리 중 size()의 경우 string과 vector의 실제 길이를 나타내므로 반복문 등의 index에
 넣을 때에는 주의할 것.
+
 #2
 vector의 경우 변수 뒤에 [index]를 입력해 해당 위치의 원소를 가져올 수 있지만, string의 경우 string 라이브
 러리에 내장되어있는 .at(index) 함수를 사용해야 원소를 가져올 수 있다.
