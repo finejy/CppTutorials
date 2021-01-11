@@ -35,3 +35,13 @@ string과 vector 라이브러리 중 size()의 경우 string과 vector의 실제
 #2
 vector의 경우 변수 뒤에 [index]를 입력해 해당 위치의 원소를 가져올 수 있지만, string의 경우 string 라이브
 러리에 내장되어있는 .at(index) 함수를 사용해야 원소를 가져올 수 있다.
+
+
+
+-------------------------------------------------------------------------------------------
+
+Check again!
+beautifulString.cpp
+H_index.cpp
+Tiling.cpp
+triangleSnail.cpp
