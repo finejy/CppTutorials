@@ -21,7 +21,7 @@ vector<int> solution(int n) {
 		else{
 			for(int i=0; i!=l; ++i){
             	answer[2 * a * (1 + a) + (i * (1 + i)) / 2 + 2 * a * i] = start_num + i;
-            	answer[second_start + i] = start°á_num + i + l;
+            	answer[second_start + i] = start_num + i + l;
             	answer[last_start - (i * (2 * l + 3 - i)) / 2 - 2 * a * i] = start_num + i + 2 * l;
         	}
    		}
