@@ -22,7 +22,7 @@ int main(){
 	}
 	*/
 	/*이차원 vector에서 size() 함수를 어떻게 써야 하는가 -> 열을 출력한다*/
-	int x =0;
+	/*int x =0;
 	int y =0;
 	vector<int> first;
 	vector<vector<int> > second;
@@ -37,6 +37,13 @@ int main(){
 		++z;
 	}
 	cout << first.size() << " " << second.size() << endl;
+	*/
+	/*char(string)에서 int로의 형 변환이 가능한가*/
+	
+	string str_i = "77";
+	
+	int num = stoi(str_i);
+	cout << num - 1 << endl;
 	 
 	return 0;
 }
