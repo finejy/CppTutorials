@@ -1,9 +1,11 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
+/*Solution1.
 vector<int> solution(string s) {
 	
 	string::size_type len = s.size();
@@ -41,6 +43,47 @@ vector<int> solution(string s) {
 
     return answer;
 }
+*/
+/*Solution4.*/
+vector<int> solution(string s){
+	
+	string::size_type len = s.size();
+	vector<int> sum_vec;
+	int sum = 0;
+	
+	
+	
+	
+	for(int i=1; i!=len-1; ++i){
+		if(s.at(i) == '}'){
+			//cout << sum << ends;
+			sum_vec.push_back(sum);
+			sum = 0;
+		}
+		else if(s.at(i) == '{' || s.at(i) == ','){
+			int int_element = 0;
+			const char *char_element = &s.at(i+1);
+			int_element = atoi(char_element);
+			sum += int_element;
+		}
+	}
+	
+	sort(sum_vec.begin(), sum_vec.end());
+	
+	vector<int>::size_type int_len=sum_vec.size();
+	vector<int> answer;
+	
+	answer.push_back(sum_vec[0]);
+	
+	
+	for(int i=0; i!=int_len-1; ++i){
+		answer.push_back(sum_vec[i+1]-sum_vec[i]);
+		//cout << sum_vec[i+1]- sum_vec[i] << endl;
+	}
+	
+	return answer;
+	
+}
 
 int main(){
 	string str = "";
@@ -64,3 +107,5 @@ int main(){
 	원소인 각 vector의 size를 이용해 원소를 순서대로 졍렬하고 for문을 이용해
 	vector별로 새로 추가되는 원소를 순서대로 answer에 대입*/
 /*Solution3. tuple에 대해 공부하기*/	 
+/*Solution4. 각각의 tuple 내의 수들의 합을 vector에 입력, 오름차순 정렬 후
+	이웃 index와의 차이를 순서대로 answer에 대입.-> CLEAR!!*/ 
