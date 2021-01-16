@@ -45,3 +45,17 @@ beautifulString.cpp
 H_index.cpp
 Tiling.cpp
 triangleSnail.cpp
+scoville.cpp
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+Memo
+
+2021.01.02
+C++ 문제 풀이 시작
+
+2021.01.16
+C++ 문제 풀이 중단/기본 문법 및 함수, library 공부부터 시작(Accelerated C++)
