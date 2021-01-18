@@ -21,7 +21,7 @@ int main(){
 		"followed by end-of-file: ";
 	vector<double> homework;
 	double x;
-	
+	/*
 	while (cin >> x){		
 		homework.push_back(x);	
 	}
@@ -38,6 +38,16 @@ int main(){
 		반복문이 언제 끝날지 확인할 수 없으므로 줄바꿈을 하더라도 오류가 계속 발생하는 것. 따라서 따로 homework의 갯수를 입력받는 과정을 추가하는 것이 최선. 
 	*/  
 	
+	while(true){
+		cin >> x;
+		if(cin.eof() == true){
+			break;
+		}
+		homework.push_back(x);
+		
+	}
+	/*eof 함수를 이용하여 줄바꿈이 일어났을 때 end-of-file로 인식을 하여 반복문이 종료되는지 확인.
+		결과 줄바꿈을 eof를 인식하지 못해 무한 루프에 빠지는 것을 확인할 수 있었음.*/ 
 	
 	typedef vector<double>::size_type vec_sz;
 	vec_sz size = homework.size();
