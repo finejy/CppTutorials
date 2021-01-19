@@ -46,5 +46,5 @@ int main(){
 	
 }
 
-/*Solution index가 0인 원소와 그 이외의 원소의 최댓값을 비교하고 해당 결과에 따라 location의 값을 산술해 location이 음수가 될 때의 answer을 출력*/ 
-
+/*Solution index가 0인 원소와 그 이외의 원소의 최댓값을 비교하고 해당 결과에 따라 location의 값을 산술해 location이 음수가 될 때의 answer을 출력*/
+/*erase 함수 사용 시 literator 함수를 사용 할 수 있다고 함. literator 함수에 대해 알아볼 것.*/ 
