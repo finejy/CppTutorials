@@ -22,7 +22,18 @@ vector<type> x;
 sort(x.begin(), x.end(), greater<type>()); -> 내림 차순 정렬
 
 
+#3
+#include <algorithm>
+#include <vector>
 
+vector<int> s = {3, 1, 1, 2, 3};
+sort(s.begin(), s.end());
+
+s.erase(unique(s.begin(), s.end()), s.end());
+-> s = {1, 2, 3}
+
+/*unique(s.begin(), s.end());
+-> s = {1, 2, 3, 1, 3};
 
 
 -------------------------------------------------------------------------------------------
