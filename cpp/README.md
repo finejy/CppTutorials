@@ -70,3 +70,5 @@ C++ 문제 풀이 시작
 
 2021.01.16
 C++ 문제 풀이 중단/기본 문법 및 함수, library 공부부터 시작(Accelerated C++)
+
+##binaryChange.cpp -> for문 범위 설정하는 방식 확인할 것
