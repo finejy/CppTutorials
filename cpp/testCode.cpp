@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <bitset>
 #include <algorithm>
  
 using namespace std;
@@ -108,15 +109,29 @@ int main(){
 	/*unique 함수를 사용했을 때 뒤로 넘어가는 쓰레기 값이 어떻게 바뀌는지 확인
 		-> 뒤로 이동하는 쓰레기 값들은 원래 값 +1을 한 형태로 이동한 것을 확인(출력값 {1, 2, 3, 2, 3})*/
 		
-	vector<int> s = {1, 1, 2, 2, 3};
+	/*vector<int> s = {1, 1, 2, 2, 3};
 	
 	unique(s.begin(), s.end());
 	
-	//cout << unique(s.begin(), s.end()) << endl;
-	
+	//cout << unique(s.begin(), s.end()) << ends; 
 	for(int i=0; i!=5; ++i){
 		cout << s[i] << " " << ends;
+	}*/
+	
+	/*binaryChange.cpp 프로그램 오류 확인-binary 함수의 범위 문제인 것으로 판단*/ 
+				
+	int n = 75000;
+	
+	int result = 0;
+	for(int i=1; n > 0; i*=10){
+		int bin = n % 2;
+		result += bin * i;
+		n /= 2;
 	}
+	//cout << result << endl;
+	//cout<< to_string(result) << endl; 
+	cout << bitset<150000>(n) << endl;
+	
 
 	return 0;
 	
