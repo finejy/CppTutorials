@@ -42,6 +42,7 @@ string solution(string number, int k) {
     return number;
 }
 */
+/*
 string solution(string number, int k){
 	string answer = "";
 	int start = 0;
@@ -85,6 +86,54 @@ int main(){
 	cout << solution(number, k)<< ends;
 	return 0;
 	
+}*/
+/*실패. 예외를 고려해야하는 방법 임 
+int background(int& n, int& k, string& number){
+	string num = "0123456789";
+	int maximum = 0;
+	int max_index = 0;
+	
+	cout << number << " " << n << " " << k << endl;
+	
+	for(int i=n; i!=n+k; ++i){
+		if(num.find(number.at(i)) > maximum){
+			maximum = num.find(number.at(i));
+			max_index = i;
+			cout << maximum << " " << max_index << endl;
+		}
+	}
+	number.erase(n, max_index-n);
+	k=k+n-max_index;
+	++n;
+	
+	return 0;
+}*/
+
+int background(int& k, string& number){
+	string::size_type len = number.size();
+	
+	while(k > 1){
+		while()
+	}
+} 
+
+string solution(string number, int k){
+	int n=0;
+	while(k!=0){
+		background(n, k, number);
+	}
+	
+	return number;
+}
+
+int main(){
+	string number;
+	int k=0;
+	cin >> number;
+	cin >> k;
+	cout << solution(number, k) << ends;
+	
+	return 0;
 }
 
 /*Solution1. while 문을 이용하여 시작점부터 이전에 제외하고 남은 k의 값만큼의
@@ -95,3 +144,41 @@ int main(){
 	해당 범위 전체의 수를 다 반환한다. */
 /*P1. atoi 함수에 들어가는 변수가 non-class 타입인 const char*이라 상황에 따라 해당 객체를 수정할 수 없다는 문제가 있음.
 	-> 0부터 9까지의 자연수를 순서대로  원소로 가지는 vector을 만들어 해당 원소의 index를 찾아 비교하는 방식으로 변경.*/ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
