@@ -119,7 +119,7 @@ int main(){
 	}*/
 	
 	/*binaryChange.cpp 프로그램 오류 확인-binary 함수의 범위 문제인 것으로 판단*/ 
-				
+	/*
 	int n = 75000;
 	
 	int result = 0;
@@ -131,7 +131,26 @@ int main(){
 	//cout << result << endl;
 	//cout<< to_string(result) << endl; 
 	cout << bitset<150000>(n) << endl;
+	*/
 	
+	/*for문의 조건에서 정의하는 변수 i를 참조로 정의할 경우 어떻게 되는가 -> 실패. 그냥 for문에서 i를 다시 정의해주면 거기서부터 다시 시작하더라*/
+	/*int x = 0;
+	for(int i=0; i!=10; ++i){
+		
+		cout << i << " " << ends;
+		if(i==5 && x==0){
+			i-=2;;
+			++x;
+		}
+		
+	} */
+	
+	/*vector에서 min 값 구하기*/
+	vector<int> num = {1, 2, 3, 4, 5};
+	int minimum = *min_element(num.begin(), num.end());
+	
+	cout << minimum;
+	 
 
 	return 0;
 	
