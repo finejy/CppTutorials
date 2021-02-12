@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 /*
@@ -38,36 +39,34 @@ long long solution(int w,int h) {
     
     return answer;
 }*/
-/*그나마 가장 정확도 높은 방법, 오류 있음
+/*그나마 가장 정확도 높은 방법, 오류 있음*/
  
 long long solution(int w,int h) {
+	setprecision(1);
     long long answer = 0;
-	answer = w * h;
-	double maximum = max(w, h);
-	double minimum = min(w, h);
+	answer = w * h - h;
 	
-	answer -= maximum;
-	
-	double space = maximum / minimum;
+	double space = (double)h/ (double)w;
 	//오류 없음->space = 1.5(w=8, h=12)
-    cout << space << " " << (int)(space) <<endl;
-
     
-	for(double i=1; i!=minimum; ++i){
+    cout << space << endl;
+    
+    
+	for(int i=1; i!=w; ++i){
 		if((i*space)!=(int)(i*space)){
-		//오류 발생 -> 컴파일 에러, 나누기는 가능하지만 나머지는 안된다는것	 
+		//오류 발생 -> 컴파일 에러, 나누기는 가능하지만 나머지는 안된다는것	
+		cout << (i*space) << " " <<  (int)(i*space) << endl;
 			--answer;
 		}
 	}
-    
-    cout << answer << endl;
+	cout << answer << endl;
     return answer;
-}*/
+}
 
-/*실패... 
+/*실패...
 int background(int w, int h){
 	int result=0;
-	int minimum = min(w, h);
+    int minimum = min(w, h);
 	for(int i=2; i!=minimum; ++i){
 		if(w%i==0&&h%i==0){
 			result=i;
@@ -80,23 +79,19 @@ int background(int w, int h){
 
 long long solution(int w,int h) {
     long long answer = 0;
-	answer = w * h;
+	answer = w * h-h;
 	int same = background(w, h);
-	int maximum = max(w, h);
-	int minimum = min(w, h);
-	
-	answer -= maximum;
 	
 	int edge = 0;
-	if(minimum%same==0){
-		edge = minimum-minimum/same;
-	}
-	else{
-		edge = minimum-1-minimum/same;
-	}
-	answer -= edge;
-	
-	
+    if(same!=0){
+        edge = w-w/same;
+
+    }
+    else{
+        edge = w-1;
+    }
+    
+    answer -= edge;
     return answer;
 }*/
 
