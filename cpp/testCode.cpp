@@ -3,7 +3,8 @@
 #include <string>
 #include <bitset>
 #include <algorithm>
- 
+#include <math.h>
+
 using namespace std;
 
 int main(){
@@ -146,10 +147,15 @@ int main(){
 	} */
 	
 	/*vector에서 min 값 구하기*/
-	vector<int> num = {1, 2, 3, 4, 5};
+	/*vector<int> num = {1, 2, 3, 4, 5};
 	int minimum = *min_element(num.begin(), num.end());
 	
-	cout << minimum;
+	cout << minimum;*/
+	
+	/*fmod 함수 사용해보기->나눗셈이 아니라 뺄셈이었던것임*/
+	double dou = fmod(12.12, 12.11);
+	
+	cout << dou << endl;
 	 
 
 	return 0;
