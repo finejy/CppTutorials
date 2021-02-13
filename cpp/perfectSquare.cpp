@@ -42,20 +42,19 @@ long long solution(int w,int h) {
 /*그나마 가장 정확도 높은 방법, 오류 있음*/
  
 long long solution(int w,int h) {
-	setprecision(1);
     long long answer = 0;
-	answer = w * h - h;
+	answer = (w-1) * h;
 	
 	double space = (double)h/ (double)w;
 	//오류 없음->space = 1.5(w=8, h=12)
     
-    cout << space << endl;
+    //cout << space << endl;
     
     
 	for(int i=1; i!=w; ++i){
 		if((i*space)!=(int)(i*space)){
 		//오류 발생 -> 컴파일 에러, 나누기는 가능하지만 나머지는 안된다는것	
-		cout << (i*space) << " " <<  (int)(i*space) << endl;
+		//cout << (i*space) << " " <<  (int)(i*space) << endl;
 			--answer;
 		}
 	}
