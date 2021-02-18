@@ -53,7 +53,7 @@ int solution(vector<vector<int>> board){
 	vector<vector<int>>::size_type column = board.size();
 	vector<int>::size_type row = board[0].size();
 	
-	vector<vector<int>> level(column, (vector<int>(row, 0)));
+	vector<vector<int>> level(column-1, (vector<int>(row-1, 0)));
 	vector<vector<int>> vertical = level;
 	
 	for(int i=0; i!=column; ++i){
