@@ -36,7 +36,7 @@ int solution(vector<int> arr) {
     int answer = 0;
     vector<int>::size_type len = arr.size();
     
-    int maximum = max_element(arr.begin(), arr.end());
+    int maximum = *max_element(arr.begin(), arr.end());
     
     vector<int> menu(1, 2);
     

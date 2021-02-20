@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-
+/*
 int solution(int bridge_length, int weight, vector<int> truck_weights) {
     int answer = 1;
     int sum_weight=truck_weights[1];
@@ -35,7 +35,21 @@ int solution(int bridge_length, int weight, vector<int> truck_weights) {
 	}
     cout << answer << endl;  
     return answer;
+}*/
+
+int solution(int bridge_length, int weight, vector<int> truck_weights){
+	int answer=0;
+	int i=0;
+	int j=0;
+	while(j<len){
+		
+	}
+	
 }
+
+
+
+
 
 int main(){
 	int bridge_length=0;

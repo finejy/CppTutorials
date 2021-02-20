@@ -10,7 +10,7 @@ int solution(string s) {
     int minimum = len;
     
     for(int i=1; i!=len/2+1; ++i){
-    	cout << "i: " << i << " " << endl;
+    	//cout << "i: " << i << " " << endl;
     	int len_2 = len%i==0 ? len/i : len/i+1 ;
     	vector<string> element(len_2, "");
     	vector<int> element_num(1, 1);
@@ -31,9 +31,9 @@ int solution(string s) {
 		int index_num=0;
     	vector<string> element_del;
     	element_del.push_back(element[0]);
-    	cout << "element: " << element[0] << " " << ends;
+    	//cout << "element: " << element[0] << " " << ends;
 		for(int j=1; j!=len_2; ++j){
-			cout << element[j] << " " << ends;
+			//cout << element[j] << " " << ends;
 			if(element[j]==element[j-1]){
 				++element_num[index_num];
 			}
@@ -44,7 +44,7 @@ int solution(string s) {
 				
 			}
 		}
-		cout << endl;
+		//cout << endl;
 		string new_string="";
 		vector<string>::size_type len_3 = element_del.size();
 		
@@ -57,10 +57,10 @@ int solution(string s) {
 				new_string+=element_del[k];
 			}
 		}
-		cout << "new_string: " << new_string << endl;
+		//cout << "new_string: " << new_string << endl;
 		string::size_type last_len = new_string.size();
 		if(last_len < minimum) minimum = last_len;
-		cout <<"minimum: " <<minimum << " " << endl;
+		//cout <<"minimum: " <<minimum << " " << endl;
 	}
 	
 	answer = minimum;
