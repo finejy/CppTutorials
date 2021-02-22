@@ -12,43 +12,24 @@ long long solution(int n){
 		int j = n - i*2;
 		if(i==0 || j==0) ++answer;
 		else{
-			long long each_calc = (n-i+1)*(n-i))/(i*(n-i+1));
-			each_case*=each_calc;
+			each_case=((each_case*(n-2*i+2))*(n-2*i+1))/(i*(n-i+1));
 			answer+=each_case;
 		}
-		cout << i << " " << each_case << " " << answer << " " << endl;
+		//cout << i << " " << each_case << " " << answer << " " << endl;
+		//cout << (n-2*i+2) << " " << (n-2*i+1) << " " << i << " " <<(n-i+1) << endl;
+		//cout << i << " " << j << " " << i+j << " " << each_case << endl;
 	}
 	
+	//cout << answer<< endl;
 	
 	return answer % 1000000007;
 }
 
-//testcode
-long long test(int n){
-	long long iNum = 1;
-	long long jNum = 1;
-	long long tNum = 1;
-	for(int i=1; i!=11; ++i){
-		iNum*=i;
-	}
-	for(int j=1; j!=n-9; ++j){
-		jNum*=j;
-	}
-	for(int k=1; k!=n+1; ++k){
-		tNum*=k;
-	}
-	
-	long long answer = tNum/(iNum*jNum);
-	
-	cout << answer << endl;
-	return answer;
-	
-} 
 
 int main(){
 	int n;
 	cin >> n;
-	cout << solution(n)<< " " << test(n) << endl;
+	cout << solution(n) << endl;
 	
 	return 0;
 }
@@ -57,6 +38,5 @@ int main(){
  를 계산, 총합을 결과값으로 출력*/ 
  
 //논리 자체에 문제는 없는 것으로 판단.
-/*입력하는 n값이 커지면 each_case에 음수값이 나타남. null값의 영향인듯함. 
-	-> each_case와 answer의 타입문제였음. int 타입으로 대입하기엔 값이 너무 큼. */
-//타입을 long long 으로 바꿔도 오류 발생. 아마도 큰 값을 계산하기 위한 다른 대처가  팔요한 것으로 보임 
+//산수 과정에서 오류 발생. 나눗셈의 존재 때문에 발생하는 오류일 것으로 예상.(곱셈과 나눗셈의 순서 문제.) 
+//상정한 경우에 대해서는 코드가 성공하는 것을 확인했지만 실제 테스트 문제는 전부 실패. for문으로 반복하는 방법을 사용해봐야 할 것으로 판단됨. 
