@@ -4,33 +4,51 @@ using namespace std;
 
 long long solution(int n){
 	long long answer = 0;
-	
+	long long each_case = 1;
 	int case_num = n / 2;
+
 	
 	for(int i=0; i!=case_num+1; ++i){
-		long long space = 0;
-		long long each_case = 1;
-		space = n - i;
-		if(i==0){
-			answer+=1;
-			continue;   
+		int j = n - i*2;
+		if(i==0 || j==0) ++answer;
+		else{
+			long long each_calc = (n-i+1)*(n-i))/(i*(n-i+1));
+			each_case*=each_calc;
+			answer+=each_case;
 		}
-		
-		for(int j=0; j!=i; ++j){
-			each_case=each_case * (space - j) / (j + 1);
-		 //if(i == 7) cout << space - j << " " << j + 1 << " " << each_case << endl;
-		}
-		//cout << each_case << endl;
-		answer += each_case % 1000000000;
+		cout << i << " " << each_case << " " << answer << " " << endl;
 	}
+	
 	
 	return answer % 1000000007;
 }
 
+//testcode
+long long test(int n){
+	long long iNum = 1;
+	long long jNum = 1;
+	long long tNum = 1;
+	for(int i=1; i!=11; ++i){
+		iNum*=i;
+	}
+	for(int j=1; j!=n-9; ++j){
+		jNum*=j;
+	}
+	for(int k=1; k!=n+1; ++k){
+		tNum*=k;
+	}
+	
+	long long answer = tNum/(iNum*jNum);
+	
+	cout << answer << endl;
+	return answer;
+	
+} 
+
 int main(){
 	int n;
 	cin >> n;
-	cout << solution(n)<<endl;
+	cout << solution(n)<< " " << test(n) << endl;
 	
 	return 0;
 }
