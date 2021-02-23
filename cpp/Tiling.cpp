@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+/*
 long long solution(int n){
 	long long answer = 0;
 	long long each_case = 1;
@@ -23,7 +23,42 @@ long long solution(int n){
 	//cout << answer<< endl;
 	
 	return answer % 1000000007;
+}*/
+
+//solution2. 정직하게 계산해보자.
+
+long long calc(int n){
+	long long result = 1;
+	if(n==0) return 1;
+	else{
+		for(int i=1; i!=n+1; ++i){
+			result*=i;
+		}
+	}
+	cout << result << endl;
+	
+	return result;
 }
+
+
+long long solution(int n){
+	long long answer = 0;
+	int case_num = n / 2;
+	
+	for(int i=0; i!=case_num+1; ++i){
+		int j = n - i*2;
+		
+		long long calculate = calc(i+j)/(calc(i)*calc(j));
+		
+		answer+=calculate;
+		//cout << answer << endl;
+	}
+	
+	return answer;
+	
+	
+	
+} 
 
 
 int main(){
