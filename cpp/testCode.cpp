@@ -153,10 +153,24 @@ int main(){
 	cout << minimum;*/
 	
 	/*fmod 함수 사용해보기->나눗셈이 아니라 뺄셈이었던것임*/
-	double dou = fmod(12.12, 12.11);
+	/*double dou = fmod(12.12, 12.11);
 	
-	cout << dou << endl;
+	cout << dou << endl;*/
 	 
+	/*기본 벡터의 const 참조인 벡터는 벡터 자체의 변동을 줄 수 없고, 이에 대한 복사본도 변동 불가능하다.*/ 
+	vector<double> homework = {1, 2, 3, 5, 4};
+	
+	const vector<double>& hw = homework;
+	
+	vector<double> hw2 = hw;
+	
+	sort(hw.begin(), hw.end());
+	
+	for(int i=0; i!=hw.size(); ++i){
+		cout << hw[i] << " " << ends;
+	}
+
+
 
 	return 0;
 	
