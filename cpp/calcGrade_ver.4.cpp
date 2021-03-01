@@ -18,9 +18,9 @@ boolfgrade(const student_info& s){
 	return grade(s) < 60;
 }
 
-vector<student_info> fails(vector<student_info>& students){
-	vector<student_info> fail;
-	vector<student_info>::iterator iter = students.begin();
+list<student_info> fails(list<student_info>& students){
+	list<student_info> fail;
+	list<student_info>::iterator iter = students.begin();
 	while(iter != students.end()){
 		if(fgrade(*iter)){
 			fail.push_back(*iter);
@@ -126,6 +126,26 @@ int main(){
 	
 	return 0;
 }*/
+
+vector<string> split(const string& s){
+	vector<string> ret;
+	typedef string::size_type string_size;
+	string_size i=0;
+	
+	while(i!=s.size()){
+		while(i!=s.size()&&isspace(s[i])) ++i;
+		
+		string_size j = i;
+		
+		while(j!=s.size()&&!isspace(s[j])) ++j;
+		
+		if(i!=j){
+			ret.push_back(s.substr(i, j-i));
+			i=j;
+		}
+	}
+	return ret;
+}
 
 int main(){
 	vector<student_info> students;
