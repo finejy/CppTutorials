@@ -4,6 +4,7 @@
 #include <bitset>
 #include <algorithm>
 #include <math.h>
+#include <list>
 
 using namespace std;
 
@@ -158,7 +159,7 @@ int main(){
 	cout << dou << endl;*/
 	 
 	/*기본 벡터의 const 참조인 벡터는 벡터 자체의 변동을 줄 수 없고, 이에 대한 복사본도 변동 불가능하다.*/ 
-	vector<double> homework = {1, 2, 3, 5, 4};
+	/*vector<double> homework = {1, 2, 3, 5, 4};
 	
 	const vector<double>& hw = homework;
 	
@@ -168,9 +169,19 @@ int main(){
 	
 	for(int i=0; i!=hw.size(); ++i){
 		cout << hw[i] << " " << ends;
-	}
+	}*/
+	
+	/*list와 iterator을 이용해 호출한 원소 간의 연산은 제대로 이루어지는지 확인*/
+	list<int> num1(5, 2);
+	list<int> num2(2, 2);
+	int answer = 0;
+	
+	list<int>::iterator it1 = num1.begin();
+	list<int>::iterator it2 = num2.begin();
+	
+	answer = (*it1)%(*it2);
 
-
+	cout << answer << " " << *it1 << " " << *it2 << endl;
 
 	return 0;
 	
