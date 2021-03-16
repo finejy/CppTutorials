@@ -171,18 +171,48 @@ int main(){
 		cout << hw[i] << " " << ends;
 	}*/
 	
-	/*list와 iterator을 이용해 호출한 원소 간의 연산은 제대로 이루어지는지 확인*/
-	list<int> num1(5, 2);
+	/*list와 iterator을 이용해 호출한 원소 간의 연산은 제대로 이루어지는지 확인
+		-> 확인 결과 iterator을 이용해 호출한 원소 간의 연산은 문제 없이 이루어진다.*/
+	/*list<int> num1(5, 2);
 	list<int> num2(2, 2);
 	int answer = 0;
 	
 	list<int>::iterator it1 = num1.begin();
 	list<int>::iterator it2 = num2.begin();
 	
-	answer = (*it1)%(*it2);
+	answer = (*it1)/(*it2);
 
 	cout << answer << " " << *it1 << " " << *it2 << endl;
-
+	*/
+	/*iterator의 증감과 할당연산자 간의 상관관계 확인
+		-> iterator과 상수 간의 덧셈은 문제 없이 연산된다.(const의 경우 확인 필요/이것도 안됨!)
+		-> iterator로 호출한 원소를 같은 타입의 변수를 이용해 다시 할당하는 것도 가능
+		-> 코드 내에 ++ 연산자를 iterator에 이용할 경우 해당 위치에서 iterator은 바로 다음 위치로 이동한다.
+		-> iterator 간의 연산은 불가능*/
+	vector<int> num(5, 0);
+	int a = 1;
+	for(vector<int>::iterator i = num.begin(); i!=num.begin()+5; ++i){
+		*i = a;
+		//cout << *i << ends;
+		++a;
+	}
+	num.push_back(4);
+	
+	vector<int>::iterator j = num.begin();
+	while(j!= num.end()){
+		vector<int>::iterator n = j+1;
+		cout << *n << " " << *j << endl;
+		if((*j) < (*(n))){
+			j = num.erase(j);
+		}
+		else ++j;
+	}
+	cout << endl;
+	
+	for(vector<int>::iterator k = num.begin(); k != num.end(); ++k){
+		cout << *k << ends;
+	}
+	 
 	return 0;
 	
 }
